@@ -3,17 +3,21 @@
 <head>
   <meta charset="utf-8">
   
-  <title>Hexo</title>
+  <title>随笔 | Hexo</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta name="description">
-<meta property="og:type" content="website">
-<meta property="og:title" content="Hexo">
-<meta property="og:url" content="http://yoursite.com/index.html">
+  <meta name="description" content="Swift 中的指针使用
+Apple 期望在 Swift 中指针能够尽量减少登场几率，因此在 Swift 中指针被映射为了一个泛型类型，并且还比较抽象。这在一定程度上造成了在 Swift 中指针使用的困难，特别是对那些并不熟悉指针，也没有多少指针操作经验的开发者 (包括我自己也是) 来说，在 Swift 中使用指针确实是一个挑战。在这篇文章里，我希望能从最基本的使用开始，总结一下在 Swift 中">
+<meta property="og:type" content="article">
+<meta property="og:title" content="随笔">
+<meta property="og:url" content="http://yoursite.com/2015/10/10/随笔/index.html">
 <meta property="og:site_name" content="Hexo">
-<meta property="og:description">
+<meta property="og:description" content="Swift 中的指针使用
+Apple 期望在 Swift 中指针能够尽量减少登场几率，因此在 Swift 中指针被映射为了一个泛型类型，并且还比较抽象。这在一定程度上造成了在 Swift 中指针使用的困难，特别是对那些并不熟悉指针，也没有多少指针操作经验的开发者 (包括我自己也是) 来说，在 Swift 中使用指针确实是一个挑战。在这篇文章里，我希望能从最基本的使用开始，总结一下在 Swift 中">
+<meta property="og:updated_time" content="2015-10-10T07:36:52.000Z">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:title" content="Hexo">
-<meta name="twitter:description">
+<meta name="twitter:title" content="随笔">
+<meta name="twitter:description" content="Swift 中的指针使用
+Apple 期望在 Swift 中指针能够尽量减少登场几率，因此在 Swift 中指针被映射为了一个泛型类型，并且还比较抽象。这在一定程度上造成了在 Swift 中指针使用的困难，特别是对那些并不熟悉指针，也没有多少指针操作经验的开发者 (包括我自己也是) 来说，在 Swift 中使用指针确实是一个挑战。在这篇文章里，我希望能从最基本的使用开始，总结一下在 Swift 中">
   
     <link rel="alternative" href="/atom.xml" title="Hexo" type="application/atom+xml">
   
@@ -59,9 +63,7 @@
   </div>
 </header>
       <div class="outer">
-        <section id="main">
-  
-    <article id="post-随笔" class="article article-type-post" itemscope itemprop="blogPost">
+        <section id="main"><article id="post-随笔" class="article article-type-post" itemscope itemprop="blogPost">
   <div class="article-meta">
     <a href="/2015/10/10/随笔/" class="article-date">
   <time datetime="2015-10-10T07:31:24.000Z" itemprop="datePublished">2015-10-10</time>
@@ -74,8 +76,8 @@
       <header class="article-header">
         
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/10/随笔/">随笔</a>
+    <h1 class="article-title" itemprop="name">
+      随笔
     </h1>
   
 
@@ -131,99 +133,20 @@
     </footer>
   </div>
   
-</article>
-
-
+    
+<nav id="article-nav">
   
-    <article id="post-印象" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/10/印象/" class="article-date">
-  <time datetime="2015-10-10T03:30:31.000Z" itemprop="datePublished">2015-10-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
   
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/10/印象/">印象</a>
-    </h1>
+    <a href="/2015/10/10/印象/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">印象</div>
+    </a>
   
+</nav>
 
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>file *fp = fopen(“文件路径”，“文件操作方式”)<br>文件操作方式：r 读<br>                          r+ 读和写<br>                         w 写<br>                         w+ 读和写 如果文件不存在则创建一个<br>                          a   :pen for writing.  The file is created if it does not exist 文件指针指向结尾<br>                           a+</p>
-<p>文件关闭:<br>   fclose(fp) 先将缓冲区中尚未存盘的数据写盘(fflush)，然后撤销存放该文件信息的结构体，最后令指向该文件的指针为空</p>
-<p>文件读写操作<br>字符读写函数：fgetc :从文件指针stream所指的文件中读取一个字符，并返回该字符<br>fputc:将给定字符c写入到文件指针stream所指向的文件中:<br>fgetc( FILE <em>stream ) 返回值为int，参数为文件指针.若果指针指向文件末尾或者读取错误，则返回EOF。<br>fputc( int c,FILE </em>stream);参数：int c被写入的字符，FILE *stream写入文件的指针。返回值：正确写入返回被写入的字符，如果错误返回EOF.</p>
-<p>按行读写函数：fgets 和fputs<br>fgets(char <em>restrict str,int size,FILE </em>restrict stream)(用来存储所得数据的地址，存储数据的大小，将要读取的文件指针)<br>返回值：<br>fputs(要写入的字符指针，要写入的文件指针)；返回值为一个非负数整数，错误则返回EOF</p>
-<p>数据块读写函数：fread和fwrite<br>fread(用于存放将要读取的数据地址，每次读取的数据大小，读取多少次，被读取的文件指针)<br>fread(void <em>restrict ptr, size_t size, size_t nitems，FILE </em>restrict stream);<br>返回值：实际读取次数<br>fwrite(用于写入的数据的地址，每次写入的大小，写入次数，要写入的文件指针)</p>
-<p>格式化读写函数：fscanf和fprintf</p>
-<p>。</p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/10/印象/" data-id="cifkrk20x00025nslewypd1d3" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
   
 </article>
 
-
-  
-    <article id="post-hello-world" class="article article-type-post" itemscope itemprop="blogPost">
-  <div class="article-meta">
-    <a href="/2015/10/10/hello-world/" class="article-date">
-  <time datetime="2015-10-10T03:13:18.000Z" itemprop="datePublished">2015-10-10</time>
-</a>
-    
-  </div>
-  <div class="article-inner">
-    
-    
-      <header class="article-header">
-        
-  
-    <h1 itemprop="name">
-      <a class="article-title" href="/2015/10/10/hello-world/">Hello World</a>
-    </h1>
-  
-
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <p>Welcome to <a href="http://hexo.io/" target="_blank" rel="external">Hexo</a>! This is your very first post. Check <a href="http://hexo.io/docs/" target="_blank" rel="external">documentation</a> for more info. If you get any problems when using Hexo, you can find the answer in <a href="http://hexo.io/docs/troubleshooting.html" target="_blank" rel="external">troubleshooting</a> or you can ask me on <a href="https://github.com/hexojs/hexo/issues" target="_blank" rel="external">GitHub</a>.</p>
-<h2 id="Quick_Start">Quick Start</h2><h3 id="Create_a_new_post">Create a new post</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo new <span class="string">"My New Post"</span></span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/writing.html" target="_blank" rel="external">Writing</a></p>
-<h3 id="Run_server">Run server</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo server</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/server.html" target="_blank" rel="external">Server</a></p>
-<h3 id="Generate_static_files">Generate static files</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo generate</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/generating.html" target="_blank" rel="external">Generating</a></p>
-<h3 id="Deploy_to_remote_sites">Deploy to remote sites</h3><figure class="highlight bash"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">$ hexo deploy</span><br></pre></td></tr></table></figure>
-<p>More info: <a href="http://hexo.io/docs/deployment.html" target="_blank" rel="external">Deployment</a></p>
-
-      
-    </div>
-    <footer class="article-footer">
-      <a data-url="http://yoursite.com/2015/10/10/hello-world/" data-id="cifkrk1zz00005nslahd8sxih" class="article-share-link">Share</a>
-      
-      
-    </footer>
-  </div>
-  
-</article>
-
-
-  
-  
 </section>
         
           <aside id="sidebar">
